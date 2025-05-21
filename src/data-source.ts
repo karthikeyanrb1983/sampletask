@@ -3,6 +3,7 @@
 import { DataSource } from "typeorm";
 import { User } from "./entities/User";
 import { Task } from "./entities/Task";
+import { Chat } from "./entities/Chat";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -14,7 +15,7 @@ export const AppDataSource = new DataSource({
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  entities: [User, Task],
+  entities: [User, Task, Chat],
   synchronize: true,
   logging: false,
 });
